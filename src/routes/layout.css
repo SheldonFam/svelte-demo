@@ -1,31 +1,31 @@
 @import 'tailwindcss';
-@import "tw-animate-css";
-@import "shadcn-svelte/tailwind.css";
-@import "@fontsource-variable/manrope";
+@import 'tw-animate-css';
+@import 'shadcn-svelte/tailwind.css';
+@import '@fontsource-variable/manrope';
 
 @custom-variant dark (&:is(.dark *));
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
 
 :root {
-	--background: #f7f5f0;
-	--foreground: #14151a;
-	--card: #ffffff;
-	--card-foreground: #14151a;
-	--popover: #ffffff;
-	--popover-foreground: #14151a;
-	--primary: #a8833a;
-	--primary-foreground: #14110a;
-	--secondary: #e6e3db;
-	--secondary-foreground: #14151a;
-	--muted: #e6e3db;
-	--muted-foreground: #55565b;
-	--accent: #e6e3db;
-	--accent-foreground: #14151a;
+	--background: #f4f4f3;
+	--foreground: #141414;
+	--card: #fbfbfa;
+	--card-foreground: #141414;
+	--popover: #fbfbfa;
+	--popover-foreground: #141414;
+	--primary: #b9875a;
+	--primary-foreground: #141414;
+	--secondary: #e7e7e5;
+	--secondary-foreground: #141414;
+	--muted: #e7e7e5;
+	--muted-foreground: #56565a;
+	--accent: #e7e7e5;
+	--accent-foreground: #141414;
 	--destructive: oklch(0.577 0.245 27.325);
-	--border: #cbc5b7;
-	--input: #8e8b83;
-	--ring: #14151a;
+	--border: #d3d3d0;
+	--input: #8a8a87;
+	--ring: #141414;
 	--chart-1: oklch(0.87 0 0);
 	--chart-2: oklch(0.556 0 0);
 	--chart-3: oklch(0.439 0 0);
@@ -43,24 +43,24 @@
 }
 
 .dark {
-	--background: #100f0d;
-	--foreground: #f2f0ea;
-	--card: #1d1b18;
-	--card-foreground: #f2f0ea;
-	--popover: #1d1b18;
-	--popover-foreground: #f2f0ea;
-	--primary: #c9a45c;
-	--primary-foreground: #14110a;
-	--secondary: #23211e;
-	--secondary-foreground: #f2f0ea;
-	--muted: #23211e;
-	--muted-foreground: #b5b2a9;
-	--accent: #38352f;
-	--accent-foreground: #f2f0ea;
+	--background: #111111;
+	--foreground: #eeeeec;
+	--card: #1a1a1a;
+	--card-foreground: #eeeeec;
+	--popover: #1a1a1a;
+	--popover-foreground: #eeeeec;
+	--primary: #c99a6c;
+	--primary-foreground: #141414;
+	--secondary: #222222;
+	--secondary-foreground: #eeeeec;
+	--muted: #222222;
+	--muted-foreground: #a9a9a6;
+	--accent: #2e2e2e;
+	--accent-foreground: #eeeeec;
 	--destructive: oklch(0.704 0.191 22.216);
-	--border: #38352f;
-	--input: #4f4b45;
-	--ring: #f2f0ea;
+	--border: #2e2e2e;
+	--input: #4b4b4b;
+	--ring: #eeeeec;
 	--chart-1: oklch(0.87 0 0);
 	--chart-2: oklch(0.556 0 0);
 	--chart-3: oklch(0.439 0 0);
@@ -127,5 +127,37 @@
 	}
 	html {
 		@apply font-sans;
+	}
+}
+
+/* Scroll reveal: add class="reveal" and it fades up as it scrolls into view.
+   Pure CSS (scroll-driven animation), so the fade follows the scroll position.
+   --reveal-index starts each item a little later, so items in a row appear one after another.
+   Items inside a sideways-scrolling row need class="reveal-group" on the row, so they follow
+   the row's position on the page instead of the row's own sideways scroll.
+   Off for visitors who ask for reduced motion. Browsers without support just show the content. */
+@keyframes reveal {
+	from {
+		opacity: 0;
+		transform: translateY(16px);
+	}
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	@supports (animation-timeline: view()) {
+		.reveal {
+			animation: reveal ease-out both;
+			animation-timeline: view();
+			animation-range: entry calc(var(--reveal-index, 0) * 10%) entry
+				calc(70% + var(--reveal-index, 0) * 10%);
+		}
+
+		.reveal-group {
+			view-timeline: --reveal-group;
+		}
+
+		.reveal-group .reveal {
+			animation-timeline: --reveal-group;
+		}
 	}
 }

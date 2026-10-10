@@ -1,0 +1,335 @@
+// The first watches are based on listings from the live site. Watches with
+// detailText "Sample listing" are made up to fill the page.
+// The photos are placeholder stock photos and do not match the watch names.
+export const watches = [
+	{
+		id: 'panerai-luminor-submersible-1950-pam305',
+		brand: 'Panerai',
+		model: 'Luminor Submersible 1950 PAM305',
+		price: 18999,
+		detailText: '2016 · Full set',
+		isSold: false,
+		soldBadgeText: '',
+		isHotDeal: true,
+		photo: '/images/watches/w02.jpg'
+	},
+	{
+		id: 'audemars-piguet-offshore-safari-26470st',
+		brand: 'Audemars Piguet',
+		model: 'Offshore Safari 26470ST',
+		price: 71999,
+		detailText: '2016',
+		isSold: false,
+		soldBadgeText: '',
+		isHotDeal: true,
+		photo: '/images/watches/w06.jpg'
+	},
+	{
+		id: 'omega-speedmaster-apollo-11-35th-anniversary',
+		brand: 'Omega',
+		model: 'Speedmaster Apollo 11 35th Anniversary',
+		price: 44999,
+		detailText: '2005',
+		isSold: false,
+		soldBadgeText: '',
+		isHotDeal: true,
+		photo: '/images/watches/w11.jpg'
+	},
+	{
+		id: 'iwc-pilot-mark-xviii-titanium',
+		brand: 'IWC',
+		model: 'Pilot Mark XVIII Titanium',
+		price: 13999,
+		detailText: '2018',
+		isSold: false,
+		soldBadgeText: '',
+		isHotDeal: true,
+		photo: '/images/watches/w05.jpg'
+	},
+	{
+		id: 'panerai-luminor-tuttonero-gmt-pam438-ceramic',
+		brand: 'Panerai',
+		model: 'Luminor Tuttonero GMT PAM438 Ceramic',
+		price: 23999,
+		detailText: '2015',
+		isSold: false,
+		soldBadgeText: '',
+		isHotDeal: false,
+		photo: '/images/watches/w12.jpg'
+	},
+	{
+		id: 'rolex-sky-dweller-326933',
+		brand: 'Rolex',
+		model: 'Sky-Dweller 326933',
+		price: 71999,
+		detailText: '2022',
+		isSold: true,
+		soldBadgeText: 'Sold',
+		isHotDeal: false,
+		photo: '/images/watches/w04.jpg'
+	},
+	{
+		id: 'omega-seamaster-planet-ocean-2500-42mm',
+		brand: 'Omega',
+		model: 'Seamaster Planet Ocean 2500 42mm',
+		price: 7999,
+		detailText: 'Sample listing',
+		isSold: false,
+		soldBadgeText: '',
+		isHotDeal: false,
+		photo: '/images/watches/w09.jpg'
+	},
+	{
+		id: 'tudor-royal-m28500',
+		brand: 'Tudor',
+		model: 'Royal M28500',
+		price: 5999,
+		detailText: 'Sample listing',
+		isSold: false,
+		soldBadgeText: '',
+		isHotDeal: false,
+		photo: '/images/watches/w10.jpg'
+	},
+	{
+		id: 'seiko-prospex-sea',
+		brand: 'Seiko',
+		model: 'Prospex Sea',
+		price: 3799,
+		detailText: '2024',
+		isSold: false,
+		soldBadgeText: '',
+		isHotDeal: false,
+		photo: '/images/watches/x05.jpg'
+	},
+	{
+		id: 'tissot-prs-516-chronograph-rose-gold',
+		brand: 'Tissot',
+		model: 'PRS 516 Chronograph Rose Gold',
+		price: 799,
+		detailText: 'Sample listing',
+		isSold: false,
+		soldBadgeText: '',
+		isHotDeal: false,
+		photo: '/images/watches/w06.jpg'
+	},
+	{
+		id: 'titoni-airmaster-auto-daydate',
+		brand: 'Titoni',
+		model: 'Airmaster Auto DayDate',
+		price: 599,
+		detailText: 'Sample listing',
+		isSold: false,
+		soldBadgeText: '',
+		isHotDeal: false,
+		photo: '/images/watches/w04.jpg'
+	},
+	{
+		id: 'omega-speedmaster-triple-date-40mm',
+		brand: 'Omega',
+		model: 'Speedmaster Triple Date 40mm',
+		price: 9999,
+		detailText: '',
+		isSold: true,
+		soldBadgeText: 'Sold 1 day ago',
+		isHotDeal: false,
+		photo: '/images/watches/w03.jpg'
+	},
+	{
+		id: 'zenith-defy-skyline-tiffany-blue',
+		brand: 'Zenith',
+		model: 'Defy Skyline Tiffany Blue',
+		price: 24999,
+		detailText: '',
+		isSold: true,
+		soldBadgeText: 'Sold 5 days ago',
+		isHotDeal: false,
+		photo: '/images/watches/w08.jpg'
+	},
+	{
+		id: 'corum-admirals-cup-challenger-44-chrono',
+		brand: 'Corum',
+		model: 'Admiral’s Cup Challenger 44 Chrono',
+		price: 6999,
+		detailText: '',
+		isSold: true,
+		soldBadgeText: 'Sold 2 days ago',
+		isHotDeal: false,
+		photo: '/images/watches/w07.jpg'
+	},
+	{
+		id: 'seiko-prospex-speedtimer-panda',
+		brand: 'Seiko',
+		model: 'Prospex Speedtimer Panda',
+		price: 1399,
+		detailText: '',
+		isSold: true,
+		soldBadgeText: 'Sold 1 Oct 2026',
+		isHotDeal: false,
+		photo: '/images/watches/w01.jpg'
+	},
+	{
+		id: 'rolex-datejust-36',
+		brand: 'Rolex',
+		model: 'Datejust 36',
+		price: 38999,
+		detailText: 'Sample listing',
+		isSold: false,
+		soldBadgeText: '',
+		isHotDeal: false,
+		photo: '/images/watches/w04.jpg'
+	},
+	{
+		id: 'rolex-submariner-date',
+		brand: 'Rolex',
+		model: 'Submariner Date',
+		price: 58999,
+		detailText: 'Sample listing',
+		isSold: false,
+		soldBadgeText: '',
+		isHotDeal: false,
+		photo: '/images/watches/w02.jpg'
+	},
+	{
+		id: 'rolex-oyster-perpetual-41',
+		brand: 'Rolex',
+		model: 'Oyster Perpetual 41',
+		price: 33999,
+		detailText: 'Sample listing',
+		isSold: false,
+		soldBadgeText: '',
+		isHotDeal: false,
+		photo: '/images/watches/w06.jpg'
+	},
+	{
+		id: 'omega-seamaster-aqua-terra',
+		brand: 'Omega',
+		model: 'Seamaster Aqua Terra',
+		price: 17999,
+		detailText: 'Sample listing',
+		isSold: false,
+		soldBadgeText: '',
+		isHotDeal: false,
+		photo: '/images/watches/w05.jpg'
+	},
+	{
+		id: 'omega-constellation',
+		brand: 'Omega',
+		model: 'Constellation',
+		price: 9499,
+		detailText: 'Sample listing',
+		isSold: false,
+		soldBadgeText: '',
+		isHotDeal: false,
+		photo: '/images/watches/w11.jpg'
+	},
+	{
+		id: 'tudor-black-bay-58',
+		brand: 'Tudor',
+		model: 'Black Bay 58',
+		price: 14999,
+		detailText: 'Sample listing',
+		isSold: false,
+		soldBadgeText: '',
+		isHotDeal: false,
+		photo: '/images/watches/w12.jpg'
+	},
+	{
+		id: 'tudor-pelagos',
+		brand: 'Tudor',
+		model: 'Pelagos',
+		price: 16499,
+		detailText: 'Sample listing',
+		isSold: false,
+		soldBadgeText: '',
+		isHotDeal: false,
+		photo: '/images/watches/w04.jpg'
+	},
+	{
+		id: 'cartier-santos-medium',
+		brand: 'Cartier',
+		model: 'Santos Medium',
+		price: 26999,
+		detailText: 'Sample listing',
+		isSold: false,
+		soldBadgeText: '',
+		isHotDeal: false,
+		photo: '/images/watches/w09.jpg'
+	},
+	{
+		id: 'cartier-tank-must',
+		brand: 'Cartier',
+		model: 'Tank Must',
+		price: 11999,
+		detailText: 'Sample listing',
+		isSold: false,
+		soldBadgeText: '',
+		isHotDeal: false,
+		photo: '/images/watches/w10.jpg'
+	},
+	{
+		id: 'iwc-portugieser-chronograph',
+		brand: 'IWC',
+		model: 'Portugieser Chronograph',
+		price: 27999,
+		detailText: 'Sample listing',
+		isSold: false,
+		soldBadgeText: '',
+		isHotDeal: false,
+		photo: '/images/watches/w03.jpg'
+	},
+	{
+		id: 'panerai-radiomir',
+		brand: 'Panerai',
+		model: 'Radiomir',
+		price: 19499,
+		detailText: 'Sample listing',
+		isSold: false,
+		soldBadgeText: '',
+		isHotDeal: false,
+		photo: '/images/watches/w08.jpg'
+	},
+	{
+		id: 'zenith-chronomaster-sport',
+		brand: 'Zenith',
+		model: 'Chronomaster Sport',
+		price: 36999,
+		detailText: 'Sample listing',
+		isSold: false,
+		soldBadgeText: '',
+		isHotDeal: false,
+		photo: '/images/watches/w08.jpg'
+	},
+	{
+		id: 'seiko-presage',
+		brand: 'Seiko',
+		model: 'Presage',
+		price: 1899,
+		detailText: 'Sample listing',
+		isSold: false,
+		soldBadgeText: '',
+		isHotDeal: false,
+		photo: '/images/watches/w07.jpg'
+	},
+	{
+		id: 'tissot-prx-powermatic-80',
+		brand: 'Tissot',
+		model: 'PRX Powermatic 80',
+		price: 2299,
+		detailText: 'Sample listing',
+		isSold: false,
+		soldBadgeText: '',
+		isHotDeal: false,
+		photo: '/images/watches/w01.jpg'
+	},
+	{
+		id: 'longines-hydroconquest',
+		brand: 'Longines',
+		model: 'HydroConquest',
+		price: 4299,
+		detailText: 'Sample listing',
+		isSold: false,
+		soldBadgeText: '',
+		isHotDeal: false,
+		photo: '/images/watches/x05.jpg'
+	}
+];
