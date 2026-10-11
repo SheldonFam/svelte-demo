@@ -15,7 +15,7 @@
 
 	let watchPage = $derived(data.watchPage);
 	let watch = $derived(watchPage.watch);
-	let watchName = $derived(watch.brand + ' ' + watchPage.fullName);
+	let watchName = $derived(watch.brand + ' ' + watchPage.fullName + ' ' + watch.reference);
 </script>
 
 <svelte:head>

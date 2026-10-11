@@ -1,14 +1,13 @@
 export const watchListContent = {
 	heading: 'Available watches',
 	description: 'Ready stock in KL. Click a watch for photos and details.',
-	// The search result text for this page.
 	pageDescription:
 		'Browse preowned luxury watches in ready stock in KL. Filter by brand and budget, then view any watch in person within 24 hours.',
 
 	loadingAccessibleLabel: 'Loading watches',
 
 	searchLabel: 'Search',
-	searchPlaceholder: 'e.g. Omega Speedmaster',
+	searchPlaceholder: 'e.g. Omega Speedmaster or 326933',
 	clearSearchAccessibleLabel: 'Clear search',
 	brandLabel: 'Brand',
 	allBrandsLabel: 'All brands',
@@ -24,7 +23,6 @@ export const watchListContent = {
 	soldHiddenTagLabel: 'Sold hidden',
 	removeFilterAccessibleLabelPrefix: 'Remove filter: ',
 
-	// Next to the page numbers: "Showing 1 to 24 of 30".
 	rangeShowingLabel: 'Showing',
 	rangeToJoiner: 'to',
 	rangeOfJoiner: 'of',
@@ -39,7 +37,6 @@ export const watchListContent = {
 	askOnWhatsappButtonLabel: 'WhatsApp us'
 };
 
-// The choices in the Budget dropdown. maximumPrice is in ringgit. null means no limit.
 export const budgetOptions = [
 	{ value: 'any', label: 'Any budget', maximumPrice: null },
 	{ value: 'under-10k', label: 'Under RM 10k', maximumPrice: 10000 },
@@ -47,8 +44,6 @@ export const budgetOptions = [
 	{ value: 'under-50k', label: 'Under RM 50k', maximumPrice: 50000 }
 ];
 
-// compareWatches puts two watches in order. null keeps the order from the data file.
-// To add a sort, add one line here.
 export const sortOptions = [
 	{ value: 'latest', label: 'Latest arrivals', compareWatches: null },
 	{

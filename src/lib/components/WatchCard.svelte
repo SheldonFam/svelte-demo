@@ -1,5 +1,5 @@
 <script>
-	import { formatRinggit, formatUsDollarEstimate } from '#lib/format.js';
+	import { formatRinggit, formatUsDollarEstimate, formatReference } from '#lib/format.js';
 
 	let { watch } = $props();
 </script>
@@ -30,8 +30,6 @@
 	</div>
 
 	<div class="flex flex-col gap-2 p-3 md:p-4">
-		<!-- Brand on the left, year and set on the right, like the live site.
-		     On a narrow card the detail drops under the brand instead of squashing it. -->
 		<div class="flex flex-wrap items-baseline justify-between gap-x-2 gap-y-1">
 			<div class="text-xs font-semibold tracking-[0.12em] text-muted-foreground uppercase">
 				{watch.brand}
@@ -42,9 +40,12 @@
 			</div>
 		</div>
 
-		<!-- min-h keeps room for two lines, so every card has the same height. -->
 		<div class="min-h-10 text-sm leading-5 md:min-h-11 md:text-base md:leading-5.5">
 			{watch.model}
+		</div>
+
+		<div class="font-mono text-xs text-muted-foreground">
+			{formatReference(watch.reference)}
 		</div>
 
 		<div class="flex flex-col gap-1">

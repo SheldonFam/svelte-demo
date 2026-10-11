@@ -21,6 +21,7 @@ export const watchDetailContent = {
 	mobileBarButtonLabel: 'WhatsApp',
 
 	detailsHeading: 'Details',
+	referenceRowLabel: 'Reference',
 	brandRowLabel: 'Brand',
 	modelRowLabel: 'Model',
 	noteRowLabel: 'Listing info',
@@ -44,8 +45,8 @@ export const watchTrustPoints = [
 
 export const extraWatchDetails = {
 	'panerai-luminor-submersible-1950-pam305': {
-		fullName: 'Luminor Submersible 1950 3 Days Automatic Titanium PAM305',
-		shortName: 'PAM305',
+		fullName: 'Luminor Submersible 1950 3 Days Automatic Titanium',
+		shortName: 'Luminor Submersible',
 		tags: ['2016', 'Condition 9/10', 'Full set'],
 		photos: [
 			'/images/watches/w02.jpg',

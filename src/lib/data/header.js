@@ -6,5 +6,6 @@ export const headerContent = {
 	],
 	whatsappButtonLabel: 'WhatsApp us',
 	themeToggleAccessibleLabel: 'Switch between light and dark mode',
-	menuToggleAccessibleLabel: 'Open or close menu'
+	menuToggleAccessibleLabel: 'Open menu',
+	menuTitle: 'Menu'
 };

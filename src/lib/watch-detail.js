@@ -51,6 +51,7 @@ function getTagsFromDetailText(detailText) {
 
 function getBasicSpecifications(watch) {
 	const specifications = [
+		{ label: watchDetailContent.referenceRowLabel, value: watch.reference },
 		{ label: watchDetailContent.brandRowLabel, value: watch.brand },
 		{ label: watchDetailContent.modelRowLabel, value: watch.model }
 	];
@@ -76,6 +77,8 @@ function getWhatsappLink(watch, fullName) {
 		watch.brand +
 		' ' +
 		fullName +
+		' ' +
+		watch.reference +
 		' (' +
 		formatRinggit(watch.price) +
 		')';

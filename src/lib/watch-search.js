@@ -1,18 +1,9 @@
-// Everything about searching the watch list on the Buy watches page:
-// the visitor's choices (the "selection"), which watches match, the page of results,
-// the removable filter tags and the count text.
-//
-// The page keeps one selection and changes it only through the functions below:
-//   let selection = defaultSelection;
-//   selection = changeSelection(selection, { brand: 'Omega' });
-//   const result = searchWatches(watches, selection);
 import { watchListContent, budgetOptions, sortOptions } from '#lib/data/watch-list.js';
 
 export const watchesPerPage = 24;
 
 const allBrandsValue = 'all';
 
-// The choices a visitor starts with. Page numbers start at 1.
 export const defaultSelection = Object.freeze({
 	searchText: '',
 	brand: allBrandsValue,
@@ -22,28 +13,19 @@ export const defaultSelection = Object.freeze({
 	page: 1
 });
 
-// Returns a new selection with some choices changed.
-// Changing anything except the page goes back to page 1.
-// Example: changeSelection(selection, { budget: 'under-20k' })
 export function changeSelection(selection, changes) {
 	const isOnlyPageChange = Object.keys(changes).every((key) => key === 'page');
 	return { ...selection, page: isOnlyPageChange ? selection.page : 1, ...changes };
 }
 
-// Returns a new selection with one filter tag removed (set back to its default).
-// tagId is the id from a tag in searchWatches(...).tags.
 export function removeTag(selection, tagId) {
 	return changeSelection(selection, { [tagId]: defaultSelection[tagId] });
 }
 
-// Returns a new selection with every filter tag removed.
-// The sort order stays, because it never shows as a tag.
 export function clearFilters(selection) {
 	return { ...defaultSelection, sort: selection.sort };
 }
 
-// Works out everything the page shows for this selection.
-// watches is null while the list is still loading.
 export function searchWatches(watches, selection) {
 	if (watches === null) {
 		return {
@@ -51,7 +33,6 @@ export function searchWatches(watches, selection) {
 			matchCount: 0,
 			brandOptions: [{ value: allBrandsValue, label: watchListContent.allBrandsLabel }],
 			tags: getTags(selection),
-			// Stays empty while loading, so it does not say "0 watches".
 			countText: '',
 			rangeText: ''
 		};
@@ -69,8 +50,6 @@ export function searchWatches(watches, selection) {
 	};
 }
 
-// Builds the list for the Brand dropdown, for example "Omega (5)".
-// Brands with more watches come first.
 function getBrandOptions(watches) {
 	const countByBrand = {};
 
@@ -104,13 +83,13 @@ function getBrandOptions(watches) {
 }
 
 function filterWatches(watches, selection) {
-	const searchWords = selection.searchText.trim().toLowerCase();
+	const searchWords = getSearchWords(selection.searchText);
 	const maximumPrice = findOption(budgetOptions, selection.budget).maximumPrice;
 
 	return watches.filter((watch) => {
-		const watchName = (watch.brand + ' ' + watch.model).toLowerCase();
+		const searchableText = normaliseForSearch(watch.brand + watch.model + watch.reference);
 
-		const matchesSearch = searchWords === '' || watchName.includes(searchWords);
+		const matchesSearch = searchWords.every((word) => searchableText.includes(word));
 		const matchesBrand = selection.brand === allBrandsValue || watch.brand === selection.brand;
 		const matchesBudget = maximumPrice === null || watch.price < maximumPrice;
 		const matchesSold = selection.showSold || !watch.isSold;
@@ -119,7 +98,17 @@ function filterWatches(watches, selection) {
 	});
 }
 
-// Puts the watches in the chosen order. Sold watches always go last.
+function getSearchWords(searchText) {
+	return searchText
+		.split(' ')
+		.map(normaliseForSearch)
+		.filter((word) => word !== '');
+}
+
+function normaliseForSearch(text) {
+	return text.toLowerCase().replace(/[^a-z0-9]/g, '');
+}
+
 function sortWatches(watches, sort) {
 	const sortedWatches = watches.slice();
 	const compareWatches = findOption(sortOptions, sort).compareWatches;
@@ -139,8 +128,6 @@ function getPageOfWatches(watches, page) {
 	return watches.slice(firstIndex, firstIndex + watchesPerPage);
 }
 
-// The small removable tags that show which filters are on.
-// Each tag id is the name of the choice it removes, for example 'brand'.
 function getTags(selection) {
 	const tags = [];
 
@@ -166,7 +153,6 @@ function getTags(selection) {
 	return tags;
 }
 
-// The text above the cards, for example "30 watches" or "4 of 30 match".
 function getCountText(matchCount, totalCount) {
 	if (matchCount === totalCount) {
 		return totalCount + ' ' + watchListContent.allWatchesCountLabel;
@@ -183,7 +169,6 @@ function getCountText(matchCount, totalCount) {
 	);
 }
 
-// The text next to the page numbers, for example "Showing 1 to 24 of 30".
 function getRangeText(matchCount, page) {
 	const firstNumber = (page - 1) * watchesPerPage + 1;
 	const lastNumber = Math.min(matchCount, page * watchesPerPage);
@@ -198,7 +183,6 @@ function getRangeText(matchCount, page) {
 	].join(' ');
 }
 
-// Finds the option with this value. Unknown values fall back to the first option.
 function findOption(options, value) {
 	return options.find((option) => option.value === value) ?? options[0];
 }

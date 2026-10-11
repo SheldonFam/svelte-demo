@@ -1,6 +1,6 @@
 <script>
 	import { Badge } from '#lib/components/ui/badge/index.js';
-	import { formatRinggit, formatUsDollarEstimate } from '#lib/format.js';
+	import { formatRinggit, formatUsDollarEstimate, formatReference } from '#lib/format.js';
 	import { watchDetailContent } from '#lib/data/watch-detail.js';
 
 	let { watch, fullName, tags } = $props();
@@ -24,9 +24,15 @@
 		{/if}
 	</div>
 
-	<h1 class="text-[26px] leading-8 font-bold tracking-tight text-balance md:text-4xl md:leading-10.5">
+	<h1
+		class="text-[26px] leading-8 font-bold tracking-tight text-balance md:text-4xl md:leading-10.5"
+	>
 		{fullName}
 	</h1>
+
+	<div class="font-mono text-sm text-muted-foreground">
+		{formatReference(watch.reference)}
+	</div>
 
 	<div class="flex flex-wrap items-baseline gap-x-4 gap-y-1">
 		<div
