@@ -4,6 +4,7 @@
 	import { ModeWatcher } from 'mode-watcher';
 	import Header from '#lib/components/Header.svelte';
 	import Footer from '#lib/components/Footer.svelte';
+	import FloatingWhatsapp from '#lib/components/FloatingWhatsapp.svelte';
 
 	let { children } = $props();
 </script>
@@ -21,3 +22,5 @@
 	</main>
 	<Footer />
 </div>
+
+<FloatingWhatsapp />

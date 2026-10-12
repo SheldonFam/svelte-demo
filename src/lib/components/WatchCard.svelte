@@ -1,7 +1,14 @@
 <script>
-	import { formatRinggit, formatUsDollarEstimate, formatReference } from '#lib/format.js';
+	import {
+		formatRinggit,
+		formatUsDollarEstimate,
+		formatReference,
+		formatSoldText
+	} from '#lib/format.js';
 
-	let { watch } = $props();
+	let { watch, variant = 'full', tagLabel = '' } = $props();
+
+	const isCompact = $derived(variant === 'compact');
 </script>
 
 <a
@@ -15,7 +22,8 @@
 			width="640"
 			height="640"
 			loading="lazy"
-			class="size-full object-cover transition-transform duration-500 group-hover:scale-[1.04] {watch.isSold
+			class="size-full object-cover transition-transform duration-500 group-hover:scale-[1.04] {watch.isSold &&
+			!isCompact
 				? 'opacity-45'
 				: ''}"
 		/>
@@ -24,42 +32,59 @@
 			<span
 				class="absolute top-2.5 left-2.5 rounded-md bg-foreground px-2 py-1 text-xs font-semibold tracking-widest text-background uppercase"
 			>
-				{watch.soldBadgeText}
+				{formatSoldText(watch.soldOn)}
+			</span>
+		{:else if tagLabel !== ''}
+			<span
+				class="absolute top-2.5 left-2.5 rounded-md bg-primary px-2 py-1 text-xs font-semibold tracking-widest text-primary-foreground uppercase"
+			>
+				{tagLabel}
 			</span>
 		{/if}
 	</div>
 
-	<div class="flex flex-col gap-2 p-3 md:p-4">
+	<div class="flex flex-col gap-2 p-3 {isCompact ? '' : 'md:p-4'}">
 		<div class="flex flex-wrap items-baseline justify-between gap-x-2 gap-y-1">
 			<div class="text-xs font-semibold tracking-[0.12em] text-muted-foreground uppercase">
 				{watch.brand}
 			</div>
 
-			<div class="text-xs whitespace-nowrap text-muted-foreground">
-				{watch.detailText}
-			</div>
+			{#if !isCompact}
+				<div class="text-xs whitespace-nowrap text-muted-foreground">
+					{watch.detailText}
+				</div>
+			{/if}
 		</div>
 
-		<div class="min-h-10 text-sm leading-5 md:min-h-11 md:text-base md:leading-5.5">
+		<div
+			class="min-h-10 text-sm leading-5 {isCompact
+				? ''
+				: 'md:min-h-11 md:text-base md:leading-5.5'}"
+		>
 			{watch.model}
 		</div>
 
-		<div class="font-mono text-xs text-muted-foreground">
-			{formatReference(watch.reference)}
-		</div>
+		{#if !isCompact}
+			<div class="font-mono text-xs text-muted-foreground">
+				{formatReference(watch.reference)}
+			</div>
+		{/if}
 
 		<div class="flex flex-col gap-1">
 			<div
-				class="text-base font-bold tabular-nums md:text-xl {watch.isSold
+				class="text-base font-bold tabular-nums {isCompact ? '' : 'md:text-xl'} {watch.isSold &&
+				!isCompact
 					? 'text-muted-foreground'
 					: ''}"
 			>
 				{formatRinggit(watch.price)}
 			</div>
 
-			<div class="text-xs text-muted-foreground md:text-sm">
-				{formatUsDollarEstimate(watch.price)}
-			</div>
+			{#if !isCompact}
+				<div class="text-xs text-muted-foreground md:text-sm">
+					{formatUsDollarEstimate(watch.price)}
+				</div>
+			{/if}
 		</div>
 	</div>
 </a>

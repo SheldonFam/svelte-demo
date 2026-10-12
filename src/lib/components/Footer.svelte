@@ -85,9 +85,7 @@
 					</a>
 				</div>
 
-				<a href={footerContent.termsLink} class="flex h-11 items-center hover:text-foreground">
-					{footerContent.termsLinkLabel}
-				</a>
+				<div class="flex h-11 items-center">{footerContent.termsLabel}</div>
 			</div>
 		</div>
 

@@ -67,10 +67,6 @@ function getBasicSpecifications(watch) {
 }
 
 function getWhatsappLink(watch, fullName) {
-	if (siteContent.whatsappLink === '#') {
-		return '#';
-	}
-
 	const message =
 		watchDetailContent.whatsappMessageStart +
 		' ' +

@@ -7,8 +7,9 @@ export const watches = [
 		price: 18999,
 		detailText: '2016 · Full set',
 		isSold: false,
-		soldBadgeText: '',
+		soldOn: null,
 		isHotDeal: true,
+		isRarePiece: false,
 		photo: '/images/watches/w02.jpg'
 	},
 	{
@@ -19,8 +20,9 @@ export const watches = [
 		price: 71999,
 		detailText: '2016',
 		isSold: false,
-		soldBadgeText: '',
+		soldOn: null,
 		isHotDeal: true,
+		isRarePiece: false,
 		photo: '/images/watches/w06.jpg'
 	},
 	{
@@ -31,8 +33,9 @@ export const watches = [
 		price: 44999,
 		detailText: '2005',
 		isSold: false,
-		soldBadgeText: '',
-		isHotDeal: true,
+		soldOn: null,
+		isHotDeal: false,
+		isRarePiece: true,
 		photo: '/images/watches/w11.jpg'
 	},
 	{
@@ -43,8 +46,9 @@ export const watches = [
 		price: 13999,
 		detailText: '2018',
 		isSold: false,
-		soldBadgeText: '',
-		isHotDeal: true,
+		soldOn: null,
+		isHotDeal: false,
+		isRarePiece: true,
 		photo: '/images/watches/w05.jpg'
 	},
 	{
@@ -55,8 +59,9 @@ export const watches = [
 		price: 23999,
 		detailText: '2015',
 		isSold: false,
-		soldBadgeText: '',
+		soldOn: null,
 		isHotDeal: false,
+		isRarePiece: true,
 		photo: '/images/watches/w12.jpg'
 	},
 	{
@@ -67,8 +72,9 @@ export const watches = [
 		price: 71999,
 		detailText: '2022',
 		isSold: true,
-		soldBadgeText: 'Sold',
+		soldOn: '2026-10-06T15:00:00+08:00',
 		isHotDeal: false,
+		isRarePiece: false,
 		photo: '/images/watches/w04.jpg'
 	},
 	{
@@ -77,10 +83,11 @@ export const watches = [
 		model: 'Seamaster Planet Ocean 2500 42mm',
 		reference: '2201.50.00',
 		price: 7999,
-		detailText: 'Sample listing',
-		isSold: false,
-		soldBadgeText: '',
+		detailText: '',
+		isSold: true,
+		soldOn: '2026-10-08T16:00:00+08:00',
 		isHotDeal: false,
+		isRarePiece: false,
 		photo: '/images/watches/w09.jpg'
 	},
 	{
@@ -91,8 +98,9 @@ export const watches = [
 		price: 5999,
 		detailText: 'Sample listing',
 		isSold: false,
-		soldBadgeText: '',
+		soldOn: null,
 		isHotDeal: false,
+		isRarePiece: false,
 		photo: '/images/watches/w10.jpg'
 	},
 	{
@@ -103,8 +111,9 @@ export const watches = [
 		price: 3799,
 		detailText: '2024',
 		isSold: false,
-		soldBadgeText: '',
+		soldOn: null,
 		isHotDeal: false,
+		isRarePiece: false,
 		photo: '/images/watches/x05.jpg'
 	},
 	{
@@ -115,8 +124,9 @@ export const watches = [
 		price: 799,
 		detailText: 'Sample listing',
 		isSold: false,
-		soldBadgeText: '',
+		soldOn: null,
 		isHotDeal: false,
+		isRarePiece: false,
 		photo: '/images/watches/w06.jpg'
 	},
 	{
@@ -127,8 +137,9 @@ export const watches = [
 		price: 599,
 		detailText: 'Sample listing',
 		isSold: false,
-		soldBadgeText: '',
+		soldOn: null,
 		isHotDeal: false,
+		isRarePiece: false,
 		photo: '/images/watches/w04.jpg'
 	},
 	{
@@ -139,8 +150,9 @@ export const watches = [
 		price: 9999,
 		detailText: '',
 		isSold: true,
-		soldBadgeText: 'Sold 1 day ago',
+		soldOn: '2026-10-11T09:30:00+08:00',
 		isHotDeal: false,
+		isRarePiece: false,
 		photo: '/images/watches/w03.jpg'
 	},
 	{
@@ -151,8 +163,9 @@ export const watches = [
 		price: 24999,
 		detailText: '',
 		isSold: true,
-		soldBadgeText: 'Sold 5 days ago',
+		soldOn: '2026-10-07T18:00:00+08:00',
 		isHotDeal: false,
+		isRarePiece: false,
 		photo: '/images/watches/w08.jpg'
 	},
 	{
@@ -163,8 +176,9 @@ export const watches = [
 		price: 6999,
 		detailText: '',
 		isSold: true,
-		soldBadgeText: 'Sold 2 days ago',
+		soldOn: '2026-10-10T12:00:00+08:00',
 		isHotDeal: false,
+		isRarePiece: false,
 		photo: '/images/watches/w07.jpg'
 	},
 	{
@@ -175,8 +189,9 @@ export const watches = [
 		price: 1399,
 		detailText: '',
 		isSold: true,
-		soldBadgeText: 'Sold 1 Oct 2026',
+		soldOn: '2026-10-01T11:00:00+08:00',
 		isHotDeal: false,
+		isRarePiece: false,
 		photo: '/images/watches/w01.jpg'
 	},
 	{
@@ -187,8 +202,9 @@ export const watches = [
 		price: 38999,
 		detailText: 'Sample listing',
 		isSold: false,
-		soldBadgeText: '',
-		isHotDeal: false,
+		soldOn: null,
+		isHotDeal: true,
+		isRarePiece: false,
 		photo: '/images/watches/w04.jpg'
 	},
 	{
@@ -199,8 +215,9 @@ export const watches = [
 		price: 58999,
 		detailText: 'Sample listing',
 		isSold: false,
-		soldBadgeText: '',
+		soldOn: null,
 		isHotDeal: false,
+		isRarePiece: false,
 		photo: '/images/watches/w02.jpg'
 	},
 	{
@@ -211,8 +228,9 @@ export const watches = [
 		price: 33999,
 		detailText: 'Sample listing',
 		isSold: false,
-		soldBadgeText: '',
+		soldOn: null,
 		isHotDeal: false,
+		isRarePiece: false,
 		photo: '/images/watches/w06.jpg'
 	},
 	{
@@ -223,8 +241,9 @@ export const watches = [
 		price: 17999,
 		detailText: 'Sample listing',
 		isSold: false,
-		soldBadgeText: '',
+		soldOn: null,
 		isHotDeal: false,
+		isRarePiece: false,
 		photo: '/images/watches/w05.jpg'
 	},
 	{
@@ -235,8 +254,9 @@ export const watches = [
 		price: 9499,
 		detailText: 'Sample listing',
 		isSold: false,
-		soldBadgeText: '',
+		soldOn: null,
 		isHotDeal: false,
+		isRarePiece: false,
 		photo: '/images/watches/w11.jpg'
 	},
 	{
@@ -247,8 +267,9 @@ export const watches = [
 		price: 14999,
 		detailText: 'Sample listing',
 		isSold: false,
-		soldBadgeText: '',
+		soldOn: null,
 		isHotDeal: false,
+		isRarePiece: false,
 		photo: '/images/watches/w12.jpg'
 	},
 	{
@@ -259,8 +280,9 @@ export const watches = [
 		price: 16499,
 		detailText: 'Sample listing',
 		isSold: false,
-		soldBadgeText: '',
+		soldOn: null,
 		isHotDeal: false,
+		isRarePiece: false,
 		photo: '/images/watches/w04.jpg'
 	},
 	{
@@ -271,8 +293,9 @@ export const watches = [
 		price: 26999,
 		detailText: 'Sample listing',
 		isSold: false,
-		soldBadgeText: '',
+		soldOn: null,
 		isHotDeal: false,
+		isRarePiece: false,
 		photo: '/images/watches/w09.jpg'
 	},
 	{
@@ -283,8 +306,9 @@ export const watches = [
 		price: 11999,
 		detailText: 'Sample listing',
 		isSold: false,
-		soldBadgeText: '',
+		soldOn: null,
 		isHotDeal: false,
+		isRarePiece: false,
 		photo: '/images/watches/w10.jpg'
 	},
 	{
@@ -295,8 +319,9 @@ export const watches = [
 		price: 27999,
 		detailText: 'Sample listing',
 		isSold: false,
-		soldBadgeText: '',
+		soldOn: null,
 		isHotDeal: false,
+		isRarePiece: false,
 		photo: '/images/watches/w03.jpg'
 	},
 	{
@@ -307,8 +332,9 @@ export const watches = [
 		price: 19499,
 		detailText: 'Sample listing',
 		isSold: false,
-		soldBadgeText: '',
+		soldOn: null,
 		isHotDeal: false,
+		isRarePiece: false,
 		photo: '/images/watches/w08.jpg'
 	},
 	{
@@ -319,8 +345,9 @@ export const watches = [
 		price: 36999,
 		detailText: 'Sample listing',
 		isSold: false,
-		soldBadgeText: '',
+		soldOn: null,
 		isHotDeal: false,
+		isRarePiece: false,
 		photo: '/images/watches/w08.jpg'
 	},
 	{
@@ -331,8 +358,9 @@ export const watches = [
 		price: 1899,
 		detailText: 'Sample listing',
 		isSold: false,
-		soldBadgeText: '',
+		soldOn: null,
 		isHotDeal: false,
+		isRarePiece: false,
 		photo: '/images/watches/w07.jpg'
 	},
 	{
@@ -343,8 +371,9 @@ export const watches = [
 		price: 2299,
 		detailText: 'Sample listing',
 		isSold: false,
-		soldBadgeText: '',
+		soldOn: null,
 		isHotDeal: false,
+		isRarePiece: false,
 		photo: '/images/watches/w01.jpg'
 	},
 	{
@@ -355,7 +384,7 @@ export const watches = [
 		price: 4299,
 		detailText: 'Sample listing',
 		isSold: false,
-		soldBadgeText: '',
+		soldOn: null,
 		isHotDeal: false,
 		photo: '/images/watches/x05.jpg'
 	}

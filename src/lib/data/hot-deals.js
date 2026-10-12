@@ -1,6 +1,7 @@
 export const hotDealsContent = {
 	heading: 'Hot deals',
 	description: 'Priced under market. Ready stock.',
-	seeAllLinkLabel: 'Browse watches',
+	tagLabel: 'Hot deal',
+	seeAllLinkLabel: 'See all in stock',
 	seeAllLink: '/watches'
 };

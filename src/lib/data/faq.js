@@ -1,4 +1,3 @@
-// Placeholder content. Replace the questions and answers with the real ones later.
 export const faqContent = {
 	heading: 'Frequently asked questions',
 	description: 'Buying, selling and trading in with MY Watch.'

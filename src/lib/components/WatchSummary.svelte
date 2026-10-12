@@ -1,6 +1,11 @@
 <script>
 	import { Badge } from '#lib/components/ui/badge/index.js';
-	import { formatRinggit, formatUsDollarEstimate, formatReference } from '#lib/format.js';
+	import {
+		formatRinggit,
+		formatUsDollarEstimate,
+		formatReference,
+		formatSoldText
+	} from '#lib/format.js';
 	import { watchDetailContent } from '#lib/data/watch-detail.js';
 
 	let { watch, fullName, tags } = $props();
@@ -14,7 +19,7 @@
 
 		{#if watch.isSold}
 			<div class="text-sm text-muted-foreground">
-				{watch.soldBadgeText === '' ? watchDetailContent.soldStatusLabel : watch.soldBadgeText}
+				{formatSoldText(watch.soldOn)}
 			</div>
 		{:else}
 			<div class="flex items-center gap-2 text-sm">

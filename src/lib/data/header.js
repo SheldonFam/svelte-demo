@@ -5,6 +5,7 @@ export const headerContent = {
 		{ name: 'Why us', href: '/#trust' }
 	],
 	whatsappButtonLabel: 'WhatsApp us',
+	whatsappFloatingAccessibleLabel: 'WhatsApp Mr. ABC',
 	themeToggleAccessibleLabel: 'Switch between light and dark mode',
 	menuToggleAccessibleLabel: 'Open menu',
 	menuTitle: 'Menu'

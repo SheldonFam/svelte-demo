@@ -130,12 +130,12 @@
 	}
 }
 
-/* Scroll reveal: add class="reveal" and it fades up as it scrolls into view.
-   Pure CSS (scroll-driven animation), so the fade follows the scroll position.
-   --reveal-index starts each item a little later, so items in a row appear one after another.
-   Items inside a sideways-scrolling row need class="reveal-group" on the row, so they follow
-   the row's position on the page instead of the row's own sideways scroll.
-   Off for visitors who ask for reduced motion. Browsers without support just show the content. */
+@media (prefers-reduced-motion: no-preference) {
+	html {
+		scroll-behavior: smooth;
+	}
+}
+
 @keyframes reveal {
 	from {
 		opacity: 0;

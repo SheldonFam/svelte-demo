@@ -1,13 +1,12 @@
 export const heroContent = {
-	eyebrowText: 'Preowned luxury watches · KL',
-	headline: 'Authentic watches, checked and ready to wear.',
+	headline: 'Authentic preowned watches. Ready stock in KL.',
 	description:
-		'Ready stock at fair prices. Every watch is inspected by experienced service technicians before it is listed.',
+		'Trusted dealer since 2020. Every watch is checked before it is listed. Message Mr. ABC on WhatsApp and see it in person within 24 hours.',
 	browseButtonLabel: 'Browse watches',
 	browseButtonLink: '/watches',
 	sellButtonLabel: 'Sell or trade in',
 	sellButtonLink: '/#sell',
-	// Placeholder stock photo. Replace with a real shop photo later.
-	photoUrl: '/images/hero-watch.jpg',
-	photoDescription: 'Two-tone luxury watch with a brown dial'
+	photoDesktopUrl: '/images/hero-wrist-desktop.jpg',
+	photoPhoneUrl: '/images/hero-wrist-phone.jpg',
+	photoDescription: 'A man checking the gold watch on his wrist'
 };

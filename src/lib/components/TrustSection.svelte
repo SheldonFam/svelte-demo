@@ -1,21 +1,24 @@
 <script>
 	import ShieldCheckIcon from '@lucide/svelte/icons/shield-check';
 	import CalendarClockIcon from '@lucide/svelte/icons/calendar-clock';
+	import HandIcon from '@lucide/svelte/icons/hand';
 	import HandCoinsIcon from '@lucide/svelte/icons/hand-coins';
+	import ArrowRightIcon from '@lucide/svelte/icons/arrow-right';
 	import { trustContent, trustReasons } from '#lib/data/trust.js';
 
 	const reasonIcons = {
 		authenticated: ShieldCheckIcon,
 		viewing: CalendarClockIcon,
-		'trade-in': HandCoinsIcon
+		inspect: HandIcon,
+		tradeIn: HandCoinsIcon
 	};
 </script>
 
-<section id="trust" class="scroll-mt-6">
+<section id="trust" class="scroll-mt-6 md:scroll-mt-20">
 	<div
 		class="mx-auto flex w-full max-w-300 flex-col gap-8 px-4 py-12 md:px-6 md:py-24 lg:flex-row lg:gap-16"
 	>
-		<div class="flex flex-col gap-3 lg:w-[26rem] lg:flex-none">
+		<div class="flex flex-col gap-3 lg:w-104 lg:flex-none">
 			<h2
 				class="text-[26px] leading-8 font-bold tracking-tight text-balance md:text-4xl md:leading-10.5"
 			>
@@ -26,9 +29,10 @@
 
 			<a
 				href={trustContent.faqLink}
-				class="flex h-11 items-center self-start font-semibold hover:opacity-75"
+				class="flex h-11 items-center gap-2 self-start font-semibold hover:opacity-75"
 			>
 				{trustContent.faqLinkLabel}
+				<ArrowRightIcon class="size-4.5" />
 			</a>
 		</div>
 

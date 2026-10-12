@@ -3,9 +3,7 @@ export const watchListContent = {
 	description: 'Ready stock in KL. Click a watch for photos and details.',
 	pageDescription:
 		'Browse preowned luxury watches in ready stock in KL. Filter by brand and price, then view any watch in person within 24 hours.',
-
 	loadingAccessibleLabel: 'Loading watches',
-
 	searchLabel: 'Search',
 	searchPlaceholder: 'e.g. Omega Speedmaster or 326933',
 	clearSearchAccessibleLabel: 'Clear search',
@@ -23,23 +21,19 @@ export const watchListContent = {
 	sortLabel: 'Sort by',
 	inStockOnlyLabel: 'In stock only',
 	inStockOnlyTagLabel: 'In stock only',
-
 	allWatchesCountLabel: 'watches',
 	matchCountJoiner: 'of',
 	matchCountLabel: 'match',
 	clearAllLabel: 'Clear all',
 	searchTagPrefix: 'Search: ',
 	removeFilterAccessibleLabelPrefix: 'Remove filter: ',
-
 	rangeShowingLabel: 'Showing',
 	rangeToJoiner: 'to',
 	rangeOfJoiner: 'of',
-
 	noMatchHeading: 'No watches match these filters.',
 	noMatchDescription:
 		'Remove a filter above, or tell us what you are looking for and we will check our stock.',
 	clearAllFiltersButtonLabel: 'Clear all filters',
-
 	specificModelHeading: 'Looking for a specific model?',
 	specificModelDescription: 'Tell us the watch you want and we will check our stock for you.',
 	askOnWhatsappButtonLabel: 'WhatsApp us'

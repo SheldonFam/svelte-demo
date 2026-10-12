@@ -5,12 +5,12 @@ export const trustContent = {
 	faqLink: '/#faq'
 };
 
-// The three reasons shown in the section. TrustSection.svelte picks an icon for each id.
 export const trustReasons = [
 	{
 		id: 'authenticated',
 		title: 'Every watch authenticated',
-		description: 'Physically inspected by a partner service centre in Berjaya Times Square.'
+		description:
+			'Physically inspected at a partner service centre in Berjaya Times Square by second-generation Swiss watch technicians, some with 20 years of experience and time at AP.'
 	},
 	{
 		id: 'viewing',
@@ -18,7 +18,12 @@ export const trustReasons = [
 		description: 'Private meetup at a cafe or lounge of your choice, anywhere in KL or Selangor.'
 	},
 	{
-		id: 'trade-in',
+		id: 'inspect',
+		title: 'Inspect it before you pay',
+		description: 'At the meetup you check the watch in your own hands first, then pay on the spot.'
+	},
+	{
+		id: 'tradeIn',
 		title: 'Trade in or sell for cash',
 		description: 'Send your watch details, get a quote, and meet for inspection and payment.'
 	}

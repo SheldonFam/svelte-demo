@@ -1,31 +1,23 @@
 export const watchDetailContent = {
 	pageDescriptionEnding: 'in ready stock in KL. View it in person within 24 hours.',
-
 	breadcrumbAllWatchesLabel: 'All watches',
 	breadcrumbAllWatchesLink: '/watches',
-
 	availableStatusLabel: 'Available now',
-	soldStatusLabel: 'Sold',
-
 	galleryAccessibleLabel: 'Watch photos',
 	showPhotoAccessibleLabelPrefix: 'Show photo ',
 	photoCounterJoiner: '/',
-
 	askAboutWatchButtonLabel: 'Ask about this watch',
 	askForSimilarWatchButtonLabel: 'Ask for a similar watch',
 	whatsappNote: 'Opens WhatsApp with this watch already in the message.',
 	whatsappMessageStart: 'Hi, I am interested in this watch:',
 	viewOnCarousellButtonLabel: 'View on Carousell',
 	carousellLink: '#',
-
 	mobileBarButtonLabel: 'WhatsApp',
-
 	detailsHeading: 'Details',
 	referenceRowLabel: 'Reference',
 	brandRowLabel: 'Brand',
 	modelRowLabel: 'Model',
 	noteRowLabel: 'Listing info',
-
 	descriptionHeading: "Seller's description",
 	similarWatchesHeading: 'You may also like',
 	similarWatchesLinkLabel: 'See all watches',

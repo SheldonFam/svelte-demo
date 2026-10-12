@@ -27,7 +27,7 @@
 	{siteContent.demoNoticeText}
 </div>
 
-<header class="border-b bg-background">
+<header class="border-b bg-background md:sticky md:top-0 md:z-20">
 	<div class="mx-auto flex w-full max-w-300 items-center justify-between gap-6 px-4 py-3 md:px-6">
 		<a
 			href="/"

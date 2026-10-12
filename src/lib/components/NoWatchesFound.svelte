@@ -1,8 +1,5 @@
 <script>
-	import { siWhatsapp } from 'simple-icons';
 	import { Button } from '#lib/components/ui/button/index.js';
-	import BrandIcon from '#lib/components/BrandIcon.svelte';
-	import { siteContent } from '#lib/data/site.js';
 	import { watchListContent } from '#lib/data/watch-list.js';
 
 	let { onClearAll } = $props();

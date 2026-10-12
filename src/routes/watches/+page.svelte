@@ -19,17 +19,14 @@
 		searchWatches
 	} from '#lib/watch-search.js';
 
-	// The watches. null until they finish loading.
 	let watches = $state.raw(null);
 
 	onMount(async () => {
 		watches = await loadWatches();
 	});
 
-	// The visitor's choices. Always replaced with a new selection, never changed in place.
 	let selection = $state.raw(defaultSelection);
 
-	// Everything the page shows, worked out again whenever the watches or the choices change.
 	let result = $derived(searchWatches(watches, selection));
 
 	function changePage(page) {

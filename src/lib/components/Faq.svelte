@@ -3,7 +3,10 @@
 	import { faqContent, faqItems } from '#lib/data/faq.js';
 </script>
 
-<section id="faq" class="mx-auto flex w-full max-w-300 flex-col gap-6 px-4 py-12 md:px-6 md:py-24">
+<section
+	id="faq"
+	class="mx-auto flex w-full max-w-300 scroll-mt-6 flex-col gap-6 px-4 py-12 md:scroll-mt-20 md:px-6 md:py-24"
+>
 	<div class="flex flex-col gap-2">
 		<h2
 			class="text-[26px] leading-8 font-bold tracking-tight text-balance md:text-4xl md:leading-10.5"
