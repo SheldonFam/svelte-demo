@@ -25,7 +25,7 @@
 		<Button
 			variant="link"
 			onclick={onClearAll}
-			class="h-11 cursor-pointer px-2 text-sm font-semibold text-foreground underline hover:opacity-75"
+			class="h-11 cursor-pointer px-2 text-sm font-semibold text-foreground hover:no-underline hover:opacity-75"
 		>
 			{watchListContent.clearAllLabel}
 		</Button>

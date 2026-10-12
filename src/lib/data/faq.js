@@ -1,3 +1,4 @@
+// Placeholder content. Replace the questions and answers with the real ones later.
 export const faqContent = {
 	heading: 'Frequently asked questions',
 	description: 'Buying, selling and trading in with MY Watch.'
@@ -5,27 +6,27 @@ export const faqContent = {
 
 export const faqItems = [
 	{
-		id: 'bargains',
-		question: 'Why are your prices lower than other dealers?',
+		id: 'question-1',
+		question: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit?',
 		answer:
-			'We sell our stock quickly and keep our costs low, so we can price close to wholesale. That applies to every brand we carry, including Rolex, Patek Philippe and Audemars Piguet.'
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
 	},
 	{
-		id: 'trade-in',
-		question: 'How do I sell or trade in my watch?',
+		id: 'question-2',
+		question: 'Sed do eiusmod tempor incididunt ut labore?',
 		answer:
-			'Send us the model and a few photos, and we reply with a cash offer based on the current market price. If you accept, we meet anywhere in KL or Selangor within 24 hours to inspect the watch and pay you. We can also sell it for you on consignment and share the profit.'
+			'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
 	},
 	{
-		id: 'authentic',
-		question: 'Are your watches guaranteed authentic?',
+		id: 'question-3',
+		question: 'Ut enim ad minim veniam, quis nostrud exercitation?',
 		answer:
-			'Yes. Every watch is inspected and authenticated by technicians at our partner service centre in Berjaya Times Square, KL. They service Swiss luxury watches, and some have 20 years of experience.'
+			'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.'
 	},
 	{
-		id: 'viewing',
-		question: 'Can I see a watch in person before I buy?',
+		id: 'question-4',
+		question: 'Duis aute irure dolor in reprehenderit?',
 		answer:
-			'Yes. Our shop at Amcorp Mall is opening soon. Until then, we meet privately at a cafe, restaurant or cigar lounge of your choice in KL or Selangor, within 24 hours of your request.'
+			'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.'
 	}
 ];

@@ -14,7 +14,7 @@
 
 		<a
 			href={watchDetailContent.similarWatchesLink}
-			class="flex h-11 items-center gap-2 font-semibold underline underline-offset-4 hover:opacity-75"
+			class="flex h-11 items-center gap-2 font-semibold hover:opacity-75"
 		>
 			{watchDetailContent.similarWatchesLinkLabel}
 			<ArrowRightIcon class="size-4.5" />

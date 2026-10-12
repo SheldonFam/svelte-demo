@@ -26,7 +26,7 @@
 
 			<a
 				href={trustContent.faqLink}
-				class="flex h-11 items-center self-start font-semibold underline underline-offset-4 hover:opacity-75"
+				class="flex h-11 items-center self-start font-semibold hover:opacity-75"
 			>
 				{trustContent.faqLinkLabel}
 			</a>

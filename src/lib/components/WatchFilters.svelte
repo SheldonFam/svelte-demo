@@ -4,13 +4,11 @@
 	import { Button } from '#lib/components/ui/button/index.js';
 	import { Input } from '#lib/components/ui/input/index.js';
 	import { Label } from '#lib/components/ui/label/index.js';
-	import { Checkbox } from '#lib/components/ui/checkbox/index.js';
+	import { Switch } from '#lib/components/ui/switch/index.js';
 	import * as Select from '#lib/components/ui/select/index.js';
-	import { watchListContent, budgetOptions, sortOptions } from '#lib/data/watch-list.js';
+	import { watchListContent, pricePresets, sortOptions } from '#lib/data/watch-list.js';
+	import { isPricePresetChosen } from '#lib/watch-search.js';
 
-	// The page owns the choices. This component shows them and reports every change
-	// as an object of changed choices, for example onChange({ brand: 'Omega' }).
-	// selection comes from watch-search.js.
 	let { selection, brandOptions, onChange } = $props();
 
 	function getOptionLabel(options, value) {
@@ -26,8 +24,27 @@
 		onChange({ searchText: '' });
 	}
 
+	function readPrice(event) {
+		const price = Number.parseInt(event.target.value, 10);
+		return Number.isNaN(price) || price < 0 ? null : price;
+	}
+
+	function handlePriceMinChange(event) {
+		onChange({ priceMin: readPrice(event) });
+	}
+
+	function handlePriceMaxChange(event) {
+		onChange({ priceMax: readPrice(event) });
+	}
+
+	function choosePreset(preset) {
+		onChange({ priceMin: preset.priceMin, priceMax: preset.priceMax });
+	}
+
 	const selectTriggerClass = 'w-full px-4 text-base data-[size=default]:h-12';
 	const selectItemClass = 'h-11 pl-3 text-base';
+	const priceInputClass =
+		'h-12 bg-card px-4 text-base tabular-nums [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none';
 </script>
 
 <div class="flex flex-col gap-4">
@@ -80,26 +97,39 @@
 			</Select.Root>
 		</div>
 
-		<div class="flex min-w-0 flex-col gap-2 lg:w-44 lg:flex-none">
-			<Label for="watch-budget" class="font-semibold">{watchListContent.budgetLabel}</Label>
+		<div class="col-span-2 flex min-w-0 flex-col gap-2 lg:w-72 lg:flex-none">
+			<Label for="watch-price-min" class="font-semibold">{watchListContent.priceLabel}</Label>
 
-			<Select.Root
-				type="single"
-				value={selection.budget}
-				onValueChange={(budget) => onChange({ budget })}
-			>
-				<Select.Trigger id="watch-budget" class="bg-card {selectTriggerClass}">
-					{getOptionLabel(budgetOptions, selection.budget)}
-				</Select.Trigger>
-				<Select.Content>
-					{#each budgetOptions as option (option.value)}
-						<Select.Item value={option.value} label={option.label} class={selectItemClass} />
-					{/each}
-				</Select.Content>
-			</Select.Root>
+			<div class="flex items-center gap-2">
+				<Input
+					id="watch-price-min"
+					type="number"
+					inputmode="numeric"
+					min="0"
+					step="500"
+					value={selection.priceMin ?? ''}
+					onchange={handlePriceMinChange}
+					placeholder={watchListContent.priceMinPlaceholder}
+					aria-label={watchListContent.priceMinAccessibleLabel}
+					class={priceInputClass}
+				/>
+				<span class="text-sm text-muted-foreground">{watchListContent.priceToJoiner}</span>
+				<Input
+					id="watch-price-max"
+					type="number"
+					inputmode="numeric"
+					min="0"
+					step="500"
+					value={selection.priceMax ?? ''}
+					onchange={handlePriceMaxChange}
+					placeholder={watchListContent.priceMaxPlaceholder}
+					aria-label={watchListContent.priceMaxAccessibleLabel}
+					class={priceInputClass}
+				/>
+			</div>
 		</div>
 
-		<div class="flex min-w-0 flex-col gap-2 lg:w-52 lg:flex-none">
+		<div class="col-span-2 flex min-w-0 flex-col gap-2 lg:w-52 lg:flex-none">
 			<Label for="watch-sort" class="font-semibold">{watchListContent.sortLabel}</Label>
 
 			<Select.Root
@@ -119,15 +149,35 @@
 		</div>
 	</div>
 
-	<div class="flex items-center gap-2">
-		<Checkbox
-			id="watch-show-sold"
-			checked={selection.showSold}
-			onCheckedChange={(showSold) => onChange({ showSold })}
-			class="size-5 cursor-pointer"
-		/>
-		<Label for="watch-show-sold" class="cursor-pointer text-sm font-normal">
-			{watchListContent.showSoldLabel}
-		</Label>
+	<div class="flex flex-wrap items-center justify-between gap-x-6 gap-y-3">
+		<div
+			class="flex flex-wrap gap-2"
+			role="group"
+			aria-label={watchListContent.pricePresetsAccessibleLabel}
+		>
+			{#each pricePresets as preset (preset.label)}
+				<Button
+					variant="outline"
+					size="sm"
+					aria-pressed={isPricePresetChosen(selection, preset)}
+					onclick={() => choosePreset(preset)}
+					class="h-9 cursor-pointer border-input bg-card px-3.5 text-sm font-normal hover:bg-card aria-pressed:border-foreground aria-pressed:font-semibold dark:bg-card dark:hover:bg-card"
+				>
+					{preset.label}
+				</Button>
+			{/each}
+		</div>
+
+		<div class="flex items-center gap-3">
+			<Switch
+				id="watch-in-stock"
+				checked={selection.inStockOnly}
+				onCheckedChange={(inStockOnly) => onChange({ inStockOnly })}
+				class="cursor-pointer"
+			/>
+			<Label for="watch-in-stock" class="cursor-pointer text-sm font-normal">
+				{watchListContent.inStockOnlyLabel}
+			</Label>
+		</div>
 	</div>
 </div>

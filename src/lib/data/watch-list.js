@@ -2,7 +2,7 @@ export const watchListContent = {
 	heading: 'Available watches',
 	description: 'Ready stock in KL. Click a watch for photos and details.',
 	pageDescription:
-		'Browse preowned luxury watches in ready stock in KL. Filter by brand and budget, then view any watch in person within 24 hours.',
+		'Browse preowned luxury watches in ready stock in KL. Filter by brand and price, then view any watch in person within 24 hours.',
 
 	loadingAccessibleLabel: 'Loading watches',
 
@@ -11,16 +11,24 @@ export const watchListContent = {
 	clearSearchAccessibleLabel: 'Clear search',
 	brandLabel: 'Brand',
 	allBrandsLabel: 'All brands',
-	budgetLabel: 'Budget',
+	priceLabel: 'Price (RM)',
+	priceMinPlaceholder: 'Min',
+	priceMaxPlaceholder: 'Max',
+	priceMinAccessibleLabel: 'Minimum price in ringgit',
+	priceMaxAccessibleLabel: 'Maximum price in ringgit',
+	priceToJoiner: 'to',
+	priceFromTagPrefix: 'From ',
+	priceUpToTagPrefix: 'Up to ',
+	pricePresetsAccessibleLabel: 'Quick price picks',
 	sortLabel: 'Sort by',
-	showSoldLabel: 'Show sold watches',
+	inStockOnlyLabel: 'In stock only',
+	inStockOnlyTagLabel: 'In stock only',
 
 	allWatchesCountLabel: 'watches',
 	matchCountJoiner: 'of',
 	matchCountLabel: 'match',
 	clearAllLabel: 'Clear all',
 	searchTagPrefix: 'Search: ',
-	soldHiddenTagLabel: 'Sold hidden',
 	removeFilterAccessibleLabelPrefix: 'Remove filter: ',
 
 	rangeShowingLabel: 'Showing',
@@ -37,11 +45,11 @@ export const watchListContent = {
 	askOnWhatsappButtonLabel: 'WhatsApp us'
 };
 
-export const budgetOptions = [
-	{ value: 'any', label: 'Any budget', maximumPrice: null },
-	{ value: 'under-10k', label: 'Under RM 10k', maximumPrice: 10000 },
-	{ value: 'under-20k', label: 'Under RM 20k', maximumPrice: 20000 },
-	{ value: 'under-50k', label: 'Under RM 50k', maximumPrice: 50000 }
+export const pricePresets = [
+	{ label: 'Under 10k', priceMin: null, priceMax: 10000 },
+	{ label: '10k to 30k', priceMin: 10000, priceMax: 30000 },
+	{ label: '30k to 60k', priceMin: 30000, priceMax: 60000 },
+	{ label: '60k and up', priceMin: 60000, priceMax: null }
 ];
 
 export const sortOptions = [

@@ -1,4 +1,5 @@
-import { watchListContent, budgetOptions, sortOptions } from '#lib/data/watch-list.js';
+import { watchListContent, sortOptions } from '#lib/data/watch-list.js';
+import { formatRinggit } from '#lib/format.js';
 
 export const watchesPerPage = 24;
 
@@ -7,11 +8,19 @@ const allBrandsValue = 'all';
 export const defaultSelection = Object.freeze({
 	searchText: '',
 	brand: allBrandsValue,
-	budget: 'any',
+	priceMin: null,
+	priceMax: null,
+	inStockOnly: false,
 	sort: 'latest',
-	showSold: true,
 	page: 1
 });
+
+const tagResets = {
+	brand: ['brand'],
+	price: ['priceMin', 'priceMax'],
+	searchText: ['searchText'],
+	inStockOnly: ['inStockOnly']
+};
 
 export function changeSelection(selection, changes) {
 	const isOnlyPageChange = Object.keys(changes).every((key) => key === 'page');
@@ -19,11 +28,21 @@ export function changeSelection(selection, changes) {
 }
 
 export function removeTag(selection, tagId) {
-	return changeSelection(selection, { [tagId]: defaultSelection[tagId] });
+	const changes = {};
+
+	for (const field of tagResets[tagId]) {
+		changes[field] = defaultSelection[field];
+	}
+
+	return changeSelection(selection, changes);
 }
 
 export function clearFilters(selection) {
 	return { ...defaultSelection, sort: selection.sort };
+}
+
+export function isPricePresetChosen(selection, preset) {
+	return selection.priceMin === preset.priceMin && selection.priceMax === preset.priceMax;
 }
 
 export function searchWatches(watches, selection) {
@@ -84,17 +103,18 @@ function getBrandOptions(watches) {
 
 function filterWatches(watches, selection) {
 	const searchWords = getSearchWords(selection.searchText);
-	const maximumPrice = findOption(budgetOptions, selection.budget).maximumPrice;
 
 	return watches.filter((watch) => {
 		const searchableText = normaliseForSearch(watch.brand + watch.model + watch.reference);
 
 		const matchesSearch = searchWords.every((word) => searchableText.includes(word));
 		const matchesBrand = selection.brand === allBrandsValue || watch.brand === selection.brand;
-		const matchesBudget = maximumPrice === null || watch.price < maximumPrice;
-		const matchesSold = selection.showSold || !watch.isSold;
+		const matchesPrice =
+			(selection.priceMin === null || watch.price >= selection.priceMin) &&
+			(selection.priceMax === null || watch.price <= selection.priceMax);
+		const matchesStock = !selection.inStockOnly || !watch.isSold;
 
-		return matchesSearch && matchesBrand && matchesBudget && matchesSold;
+		return matchesSearch && matchesBrand && matchesPrice && matchesStock;
 	});
 }
 
@@ -135,8 +155,8 @@ function getTags(selection) {
 		tags.push({ id: 'brand', label: selection.brand });
 	}
 
-	if (selection.budget !== defaultSelection.budget) {
-		tags.push({ id: 'budget', label: findOption(budgetOptions, selection.budget).label });
+	if (selection.priceMin !== null || selection.priceMax !== null) {
+		tags.push({ id: 'price', label: getPriceTagLabel(selection) });
 	}
 
 	if (selection.searchText.trim() !== '') {
@@ -146,11 +166,29 @@ function getTags(selection) {
 		});
 	}
 
-	if (selection.showSold !== defaultSelection.showSold) {
-		tags.push({ id: 'showSold', label: watchListContent.soldHiddenTagLabel });
+	if (selection.inStockOnly) {
+		tags.push({ id: 'inStockOnly', label: watchListContent.inStockOnlyTagLabel });
 	}
 
 	return tags;
+}
+
+function getPriceTagLabel(selection) {
+	if (selection.priceMax === null) {
+		return watchListContent.priceFromTagPrefix + formatRinggit(selection.priceMin);
+	}
+
+	if (selection.priceMin === null) {
+		return watchListContent.priceUpToTagPrefix + formatRinggit(selection.priceMax);
+	}
+
+	return (
+		formatRinggit(selection.priceMin) +
+		' ' +
+		watchListContent.priceToJoiner +
+		' ' +
+		formatRinggit(selection.priceMax)
+	);
 }
 
 function getCountText(matchCount, totalCount) {
