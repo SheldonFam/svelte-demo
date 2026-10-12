@@ -4,7 +4,7 @@
 </script>
 
 <section
-	class="relative isolate flex min-h-140 items-end overflow-hidden bg-neutral-950 text-white md:min-h-[72vh] md:items-center"
+	class="relative isolate flex min-h-140 items-end overflow-hidden bg-neutral-950 text-white md:min-h-[calc(100vh-97px)] md:items-center"
 >
 	<picture>
 		<source media="(min-width: 768px)" srcset={heroContent.photoDesktopUrl} />
@@ -36,17 +36,17 @@
 				{heroContent.description}
 			</p>
 
-			<div class="mt-1 flex gap-3 md:mt-2">
+			<div class="mt-1 flex flex-col gap-3 sm:flex-row md:mt-2">
 				<Button
 					href={heroContent.browseButtonLink}
-					class="h-14 flex-1 px-4 text-base font-bold md:flex-none md:px-8"
+					class="h-14 bg-white px-6 text-base font-bold text-neutral-900 hover:bg-white/90 md:px-8"
 				>
 					{heroContent.browseButtonLabel}
 				</Button>
 				<Button
 					href={heroContent.sellButtonLink}
 					variant="outline"
-					class="h-14 flex-1 border-white/40 bg-transparent px-4 text-base font-semibold text-white hover:border-white hover:bg-white/10 hover:text-white md:flex-none md:px-6"
+					class="h-14 border-white/40 bg-transparent px-6 text-base font-semibold text-white hover:border-white hover:bg-white/10 hover:text-white"
 				>
 					{heroContent.sellButtonLabel}
 				</Button>

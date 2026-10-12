@@ -12,7 +12,7 @@
 	<a
 		href={siteContent.whatsappLink}
 		aria-label={headerContent.whatsappFloatingAccessibleLabel}
-		class="fixed right-4 bottom-5 z-10 flex size-14 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-[0_6px_18px_-4px_rgba(0,0,0,0.35)] transition-transform active:translate-y-px md:hidden"
+		class="fixed right-4 bottom-5 z-10 flex size-14 items-center justify-center rounded-full bg-mint text-mint-foreground shadow-[0_6px_18px_-4px_rgba(0,0,0,0.35)] transition-transform active:translate-y-px md:hidden"
 	>
 		<BrandIcon icon={siWhatsapp} size={26} />
 	</a>

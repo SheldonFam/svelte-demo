@@ -18,7 +18,11 @@
 		<div class="text-xl leading-6 font-bold tabular-nums">{formatRinggit(watch.price)}</div>
 	</div>
 
-	<Button href={whatsappLink} class="h-12 flex-none gap-2 px-6 text-base font-bold">
+	<Button
+		href={whatsappLink}
+		variant="whatsapp"
+		class="h-12 flex-none gap-2 px-6 text-base font-bold"
+	>
 		<BrandIcon icon={siWhatsapp} size={20} />
 		{watchDetailContent.mobileBarButtonLabel}
 	</Button>

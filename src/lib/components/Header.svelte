@@ -57,7 +57,7 @@
 			<Button
 				href={siteContent.whatsappLink}
 				variant="outline"
-				class="hidden h-11 gap-2 px-4 text-base font-bold md:inline-flex"
+				class="hidden h-11 gap-2 border-mint px-4 text-base font-bold text-mint hover:bg-mint/10 hover:text-mint md:inline-flex dark:border-mint dark:hover:bg-mint/15"
 			>
 				<BrandIcon icon={siWhatsapp} size={20} />
 				{headerContent.whatsappButtonLabel}
@@ -107,6 +107,7 @@
 
 					<Button
 						href={siteContent.whatsappLink}
+						variant="whatsapp"
 						class="mt-6 h-12 w-full gap-2 text-base font-bold"
 						onclick={closeMobileMenu}
 					>

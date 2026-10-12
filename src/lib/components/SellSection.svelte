@@ -33,6 +33,7 @@
 
 		<Button
 			href={siteContent.whatsappLink}
+			variant="whatsapp"
 			class="h-14 w-full gap-3 px-8 text-base font-bold sm:w-auto sm:justify-self-start lg:col-start-1 lg:row-start-2"
 		>
 			<BrandIcon icon={siWhatsapp} size={20} />

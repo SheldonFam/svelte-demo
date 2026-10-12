@@ -3,12 +3,15 @@
 		formatRinggit,
 		formatUsDollarEstimate,
 		formatReference,
-		formatSoldText
+		formatSoldText,
+		formatTimeSince
 	} from '#lib/format.js';
 
 	let { watch, variant = 'full', tagLabel = '' } = $props();
 
 	const isCompact = $derived(variant === 'compact');
+
+	const hasSaleDate = $derived(watch.isSold && watch.soldOn !== null);
 </script>
 
 <a
@@ -30,20 +33,22 @@
 
 		{#if watch.isSold}
 			<span
-				class="absolute top-2.5 left-2.5 rounded-md bg-foreground px-2 py-1 text-xs font-semibold tracking-widest text-background uppercase"
+				class="absolute top-2.5 left-2.5 rounded-md px-2 py-1 text-xs font-semibold tracking-widest whitespace-nowrap uppercase {isCompact
+					? 'bg-white text-neutral-900'
+					: 'bg-neutral-900 text-white'}"
 			>
-				{formatSoldText(watch.soldOn)}
+				{isCompact ? formatSoldText(null) : formatSoldText(watch.soldOn)}
 			</span>
 		{:else if tagLabel !== ''}
 			<span
-				class="absolute top-2.5 left-2.5 rounded-md bg-primary px-2 py-1 text-xs font-semibold tracking-widest text-primary-foreground uppercase"
+				class="absolute top-2.5 left-2.5 rounded-md bg-mint px-2 py-1 text-xs font-semibold tracking-widest text-mint-foreground uppercase"
 			>
 				{tagLabel}
 			</span>
 		{/if}
 	</div>
 
-	<div class="flex flex-col gap-2 p-3 {isCompact ? '' : 'md:p-4'}">
+	<div class="flex flex-1 flex-col gap-2 p-3 {isCompact ? '' : 'md:p-4'}">
 		<div class="flex flex-wrap items-baseline justify-between gap-x-2 gap-y-1">
 			<div class="text-xs font-semibold tracking-[0.12em] text-muted-foreground uppercase">
 				{watch.brand}
@@ -65,12 +70,12 @@
 		</div>
 
 		{#if !isCompact}
-			<div class="font-mono text-xs text-muted-foreground">
+			<div class="font-mono text-xs break-all text-muted-foreground">
 				{formatReference(watch.reference)}
 			</div>
 		{/if}
 
-		<div class="flex flex-col gap-1">
+		<div class="mt-auto flex flex-col gap-1">
 			<div
 				class="text-base font-bold tabular-nums {isCompact ? '' : 'md:text-xl'} {watch.isSold &&
 				!isCompact
@@ -84,6 +89,8 @@
 				<div class="text-xs text-muted-foreground md:text-sm">
 					{formatUsDollarEstimate(watch.price)}
 				</div>
+			{:else if hasSaleDate}
+				<div class="text-xs text-muted-foreground">{formatTimeSince(watch.soldOn)} ago</div>
 			{/if}
 		</div>
 	</div>

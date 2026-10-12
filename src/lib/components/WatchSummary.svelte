@@ -23,7 +23,7 @@
 			</div>
 		{:else}
 			<div class="flex items-center gap-2 text-sm">
-				<span class="size-2 rounded-full bg-[#25d366]"></span>
+				<span class="size-2 rounded-full bg-mint"></span>
 				{watchDetailContent.availableStatusLabel}
 			</div>
 		{/if}

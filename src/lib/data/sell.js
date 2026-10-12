@@ -19,5 +19,5 @@ export const sellSectionContent = {
 			description: 'Anywhere in KL or Selangor, for inspection and payment on the spot.'
 		}
 	],
-	whatsappButtonLabel: 'Get a quote on WhatsApp'
+	whatsappButtonLabel: 'Get a quote'
 };

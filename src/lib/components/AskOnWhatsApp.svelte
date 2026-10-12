@@ -14,7 +14,11 @@
 		<p class="text-muted-foreground">{watchListContent.specificModelDescription}</p>
 	</div>
 
-	<Button href={siteContent.whatsappLink} class="h-12 gap-2 px-6 text-base font-bold">
+	<Button
+		href={siteContent.whatsappLink}
+		variant="whatsapp"
+		class="h-12 gap-2 px-6 text-base font-bold"
+	>
 		<BrandIcon icon={siWhatsapp} size={20} />
 		{watchListContent.askOnWhatsappButtonLabel}
 	</Button>

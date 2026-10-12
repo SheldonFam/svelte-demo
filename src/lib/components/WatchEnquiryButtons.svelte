@@ -8,7 +8,7 @@
 </script>
 
 <div class="flex flex-col gap-4">
-	<Button href={whatsappLink} class="h-14 gap-3 text-base font-bold">
+	<Button href={whatsappLink} variant="whatsapp" class="h-14 gap-3 text-base font-bold">
 		<BrandIcon icon={siWhatsapp} size={22} />
 		{isSold
 			? watchDetailContent.askForSimilarWatchButtonLabel

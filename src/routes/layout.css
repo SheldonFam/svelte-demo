@@ -2,35 +2,38 @@
 @import 'tw-animate-css';
 @import 'shadcn-svelte/tailwind.css';
 @import '@fontsource-variable/manrope';
+@import '@fontsource/dm-mono';
 
 @custom-variant dark (&:is(.dark *));
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
 
 :root {
-	--background: #f4f4f3;
-	--foreground: #141414;
-	--card: #fbfbfa;
-	--card-foreground: #141414;
-	--popover: #fbfbfa;
-	--popover-foreground: #141414;
-	--primary: #b9875a;
-	--primary-foreground: #141414;
-	--secondary: #e7e7e5;
-	--secondary-foreground: #141414;
-	--muted: #e7e7e5;
-	--muted-foreground: #56565a;
-	--accent: #e7e7e5;
-	--accent-foreground: #141414;
+	--background: #ffffff;
+	--foreground: #202124;
+	--card: #ffffff;
+	--card-foreground: #202124;
+	--popover: #ffffff;
+	--popover-foreground: #202124;
+	--primary: #202124;
+	--primary-foreground: #ffffff;
+	--secondary: #f1f3f2;
+	--secondary-foreground: #202124;
+	--muted: #f1f3f2;
+	--muted-foreground: #5f6663;
+	--accent: #f1f3f2;
+	--accent-foreground: #202124;
 	--destructive: oklch(0.577 0.245 27.325);
-	--border: #d3d3d0;
-	--input: #8a8a87;
-	--ring: #141414;
+	--border: #e3e6e4;
+	--input: #8e9591;
+	--ring: #202124;
 	--chart-1: oklch(0.87 0 0);
 	--chart-2: oklch(0.556 0 0);
 	--chart-3: oklch(0.439 0 0);
 	--chart-4: oklch(0.371 0 0);
 	--chart-5: oklch(0.269 0 0);
+	--mint: #1a7d58;
+	--mint-foreground: #ffffff;
 	--radius: 0.25rem;
 	--sidebar: oklch(0.985 0 0);
 	--sidebar-foreground: oklch(0.145 0 0);
@@ -49,12 +52,12 @@
 	--card-foreground: #eeeeec;
 	--popover: #1a1a1a;
 	--popover-foreground: #eeeeec;
-	--primary: #c99a6c;
+	--primary: #eeeeec;
 	--primary-foreground: #141414;
 	--secondary: #222222;
 	--secondary-foreground: #eeeeec;
 	--muted: #222222;
-	--muted-foreground: #a9a9a6;
+	--muted-foreground: #a4a8a6;
 	--accent: #2e2e2e;
 	--accent-foreground: #eeeeec;
 	--destructive: oklch(0.704 0.191 22.216);
@@ -74,10 +77,13 @@
 	--sidebar-accent-foreground: oklch(0.985 0 0);
 	--sidebar-border: oklch(1 0 0 / 10%);
 	--sidebar-ring: oklch(0.556 0 0);
+	--mint: #3fb389;
+	--mint-foreground: #141414;
 }
 
 @theme inline {
 	--font-sans: 'Manrope Variable', sans-serif;
+	--font-mono: 'DM Mono', ui-monospace, SFMono-Regular, monospace;
 	--color-sidebar-ring: var(--sidebar-ring);
 	--color-sidebar-border: var(--sidebar-border);
 	--color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -103,6 +109,8 @@
 	--color-secondary: var(--secondary);
 	--color-primary-foreground: var(--primary-foreground);
 	--color-primary: var(--primary);
+	--color-mint: var(--mint);
+	--color-mint-foreground: var(--mint-foreground);
 	--color-popover-foreground: var(--popover-foreground);
 	--color-popover: var(--popover);
 	--color-card-foreground: var(--card-foreground);
