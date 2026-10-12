@@ -1,30 +1,33 @@
 export const trustContent = {
 	heading: 'Why buyers trust us',
-	description: 'Trading since 2020, with more than 800 watches sold.',
+	description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',
 	faqLinkLabel: 'Read the common questions',
 	faqLink: '/#faq'
 };
 
+// The reasons shown in the section, in order. TrustSection.svelte picks an icon for each id.
 export const trustReasons = [
 	{
 		id: 'authenticated',
-		title: 'Every watch authenticated',
+		title: 'Lorem ipsum dolor sit amet',
 		description:
-			'Physically inspected at a partner service centre in Berjaya Times Square by second-generation Swiss watch technicians, some with 20 years of experience and time at AP.'
+			'Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.'
 	},
 	{
 		id: 'viewing',
-		title: 'View it within 24 hours',
-		description: 'Private meetup at a cafe or lounge of your choice, anywhere in KL or Selangor.'
+		title: 'Sed do eiusmod tempor',
+		description:
+			'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.'
 	},
 	{
 		id: 'inspect',
-		title: 'Inspect it before you pay',
-		description: 'At the meetup you check the watch in your own hands first, then pay on the spot.'
+		title: 'Ut enim ad minim veniam',
+		description:
+			'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.'
 	},
 	{
 		id: 'tradeIn',
-		title: 'Trade in or sell for cash',
-		description: 'Send your watch details, get a quote, and meet for inspection and payment.'
+		title: 'Quis nostrud exercitation',
+		description: 'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.'
 	}
 ];

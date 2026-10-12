@@ -1,7 +1,7 @@
 export const heroContent = {
 	headline: 'Authentic preowned watches. Ready stock in KL.',
 	description:
-		'Trusted dealer since 2020. Every watch is checked before it is listed. Message Mr. ABC on WhatsApp and see it in person within 24 hours.',
+		'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
 	browseButtonLabel: 'Browse watches',
 	browseButtonLink: '/watches',
 	sellButtonLabel: 'Sell or trade in',

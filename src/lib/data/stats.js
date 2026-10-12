@@ -1,6 +1,6 @@
 export const liveSiteFigures = {
-	totalSold: '830',
-	readyStock: '227'
+	totalSold: '800',
+	readyStock: '200'
 };
 
 export const statsContent = {

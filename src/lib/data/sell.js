@@ -1,23 +1,25 @@
 export const sellSectionContent = {
 	heading: 'Have a watch to sell?',
 	description:
-		'Mr. ABC buys outright, or sells it for you on consignment with profit sharing. Three steps, and the meetup is within 24 hours.',
+		'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
 	steps: [
 		{
 			id: 'send',
-			title: 'Send the model and a few photos',
-			description: 'On WhatsApp, straight to Mr. ABC.'
+			title: 'Lorem ipsum dolor sit amet',
+			description: 'Consectetur adipiscing elit, sed do eiusmod.'
 		},
 		{
 			id: 'quote',
-			title: 'Get a cash offer',
-			description: 'Based on the current market price.'
+			title: 'Ut enim ad minim veniam',
+			description: 'Quis nostrud exercitation ullamco laboris.'
 		},
 		{
 			id: 'meet',
-			title: 'Meet within 24 hours',
-			description: 'Anywhere in KL or Selangor, for inspection and payment on the spot.'
+			title: 'Duis aute irure dolor',
+			description:
+				'In reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
 		}
 	],
+	// Short on purpose: the WhatsApp icon beside it names the channel.
 	whatsappButtonLabel: 'Get a quote'
 };
